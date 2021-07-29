@@ -10,3 +10,17 @@ let items = [
     price: 34000,
   },
 ];
+
+function getItem(id){
+    return Promise((reject, resolve) => {
+        setTimeout(
+            items.forEach(element => {
+                if (element.id === id)
+                {
+                    resolve(element)
+                }
+            
+            }, 1000);
+        )
+    })
+}
