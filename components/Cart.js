@@ -6,7 +6,7 @@ class Cart {
    * @property {Item} item an item object
    */
   addItem(item) {
-    if (typeof item == "Item") {
+    if (typeof item == "object") {
       this.cartList.push(item);
       return "Added item to cart";
     } else {

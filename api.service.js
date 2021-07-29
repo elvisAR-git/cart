@@ -12,15 +12,14 @@ let items = [
 ];
 
 function getItem(id){
-    return Promise((reject, resolve) => {
-        setTimeout(
-            items.forEach(element => {
-                if (element.id === id)
-                {
-                    resolve(element)
-                }
-            
-            }, 1000);
-        )
-    })
+  var item = null
+  for (let index = 0; index < items.length; index++) {
+    
+    if(parseInt(id) === items[index].id){
+      item = items[index]
+    }
+    
+  }
+  return item
+
 }

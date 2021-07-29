@@ -6,8 +6,8 @@ class Item {
   /**
    * @property {String} itemName ; the name of the product
    */
-  constructor(itemName, itemPrice) {
-    if (this.validator(itemID, itemName, itemPrice)) {
+  constructor(itemID,itemName, itemPrice) {
+    if (this.validator(itemName, itemPrice)) {
       this.name = itemName;
       this.price = itemPrice;
       this.id = itemID;
@@ -17,9 +17,10 @@ class Item {
   }
 
   validator(name, price) {
-    if (typeof name != String && typeof price != Number) {
+    if (typeof(name) != "string" && typeof(price) != "number") {
+      console.log("Meeh")
       return false;
-    } else if (name.length < 1 && price < 1) {
+    } else if (name.length < 1 || price < 1) {
       //   too short
       return false;
     } else {
